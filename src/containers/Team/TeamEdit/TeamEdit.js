@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 
 import { graphql, compose } from 'react-apollo'
-import gql from 'graphql-tag'
 
-import { ALL_TEAMS_QUERY } from '../TeamList/TeamList'
+import { ALL_TEAMS_QUERY, FIND_TEAM_QUERY, UPDATE_TEAM_MUTATION } from '../../../graphql'
 
 class TeamEdit extends Component {
   state = {
@@ -107,34 +106,6 @@ class TeamEdit extends Component {
     )
   }
 }
-
-export const FIND_TEAM_QUERY = gql`
-  query FindTeamQuery($id: ID!) {
-    Team(
-      id: $id
-    ) {
-      id
-      name,
-      members {
-        id
-        name
-      }
-    }
-  }
-`
-
-export const UPDATE_TEAM_MUTATION = gql`
-  mutation UpdateTeamMutation($id: ID!, $name: String!) {
-    updateTeam(
-      id: $id
-      name: $name
-    ) {
-      id
-      name
-      createdAt
-    }
-  }
-`
 
 export default compose(
   graphql(FIND_TEAM_QUERY, {
