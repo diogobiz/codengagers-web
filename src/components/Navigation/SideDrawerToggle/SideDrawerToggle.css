@@ -1,0 +1,17 @@
+.SideDrawerToggle {
+  width: 30px;
+  height: 40px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.SideDrawerToggle div {
+  width: 90%;
+  height: 1px;
+  background-color: white;
+}

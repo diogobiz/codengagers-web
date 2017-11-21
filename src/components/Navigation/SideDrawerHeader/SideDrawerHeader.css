@@ -1,0 +1,10 @@
+.SideDrawerHeader {
+  background: #141E30;
+  background: -webkit-linear-gradient(to bottom right, #243B55, #141E30);
+  background: linear-gradient(to bottom right, #243B55, #141E30);
+  padding: 32px 16px;
+}
+
+.SideDrawerHeader .Logo {
+  height: 60px;
+}
