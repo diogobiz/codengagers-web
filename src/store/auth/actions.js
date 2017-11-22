@@ -32,23 +32,9 @@ const authFail = (error) => {
   }
 }
 
-const authCheck = (history) => {
-  return (dispatch) => {
-    const user = localStorage.getItem(AUTH_USER)
-
-    if (!user) {
-      dispatch(authLogout())
-      history.replace(`/login`)
-    } else {
-      dispatch(authSuccess(JSON.parse(user)))
-    }
-  }
-}
-
 export default {
   authLogin,
   authLogout,
   authSuccess,
-  authFail,
-  authCheck
+  authFail
 }

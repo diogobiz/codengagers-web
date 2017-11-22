@@ -4,6 +4,8 @@ import { graphql } from 'react-apollo'
 
 import { ALL_TEAMS_QUERY } from '../../../graphql'
 
+import { TeamList as TeamListComponent } from '../../../components/Team'
+
 class TeamList extends Component {
   create() {
     this.props.history.push(`/team/new`)
@@ -31,22 +33,7 @@ class TeamList extends Component {
           <div>Error</div>}
 
         {allTeams &&
-          <table className="table table-striped table-hover">
-            <thead>
-              <tr>
-                <th>Name</th>
-              </tr>
-            </thead>
-            <tbody>
-              {allTeams.map((team, index) => (
-                <tr key={team.id}>
-                  <td>
-                    <a onClick={() => this.edit(team.id)}>{team.name}</a>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>}
+          <TeamListComponent teams={allTeams} />}
       </div>
     )
   }

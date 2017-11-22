@@ -33,29 +33,25 @@ let Login = (props) => {
   )
 }
 
-const validate = (values) => {
-  const errors = validator(values, [
-    {
-      name: 'email',
-      rules: [
-        {
-          type: REQUIRED
-        }, {
-          type: IS_EMAIL
-        }
-      ]
-    }, {
-      name: 'password',
-      rules: [
-        {
-          type: REQUIRED
-        }
-      ]
-    }
-  ])
-
-  return errors
-}
+const validate = (values) => validator(values, [
+  {
+    name: 'email',
+    rules: [
+      {
+        type: REQUIRED
+      }, {
+        type: IS_EMAIL
+      }
+    ]
+  }, {
+    name: 'password',
+    rules: [
+      {
+        type: REQUIRED
+      }
+    ]
+  }
+])
 
 const warn = (values) => {
   const warnings = {}
