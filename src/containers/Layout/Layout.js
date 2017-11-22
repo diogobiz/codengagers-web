@@ -2,7 +2,11 @@ import React, { Component } from 'react'
 
 import { connect } from 'react-redux'
 
+import { Switch, withRouter } from 'react-router-dom'
+
 import { Toolbar, SideDrawer } from '../../components/Navigation'
+
+import { Routes } from '../../components/Routes'
 
 import Aux from '../../hoc/Aux/Aux'
 
@@ -40,7 +44,13 @@ class Layout extends Component {
           closed={this.sideDrawerClosedHandler} />
 
         <main className="Layout-Content">
-          {this.props.children}
+          <Switch>
+            {Routes.map((Route, i) => (
+              React.cloneElement(Route, {
+                key: `@appRoutes/${i}`
+              })
+            ))}
+          </Switch>
         </main>
       </Aux>
     )
@@ -51,4 +61,4 @@ const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.user !== null
 })
 
-export default connect(mapStateToProps)(Layout)
+export default connect(mapStateToProps)(withRouter(Layout))
