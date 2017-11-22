@@ -6,7 +6,7 @@ import bcrypt from 'bcryptjs'
 
 import { Login } from '../../../components/Auth'
 
-import { LOGIN_USER_QUERY } from '../../../graphql/queries'
+import { LOGIN_USER_QUERY } from '../../../graphql'
 
 import authActions from '../../../store/auth/actions'
 

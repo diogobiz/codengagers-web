@@ -1,0 +1,42 @@
+.CoworkerCard {
+  margin-bottom: 30px;
+}
+
+.CoworkerCard-Image {
+  filter: grayscale(1);
+  transition: all 1s ease;
+  width: 100%;
+  height: 200px;
+  box-shadow: inset 0px -63px 20px -2px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+.CoworkerCard:hover .CoworkerCard-Image {
+  filter: grayscale(0);
+  transition: all 1s ease;
+}
+
+.CoworkerCard-Name {
+  color: #fff;
+  position: absolute;
+  bottom: 20px;
+  left: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.CoworkerCard-Email {
+  color: #fff;
+  position: absolute;
+  bottom: 6px;
+  left: 16px;
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.CoworkerCard-Footer {
+  padding: 25px 15px;
+  background-color: #141E30;
+  color: #fff;
+
+}

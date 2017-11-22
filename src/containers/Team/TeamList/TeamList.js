@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 
 import { graphql } from 'react-apollo'
-import gql from 'graphql-tag'
+
+import { ALL_TEAMS_QUERY } from '../../../graphql'
 
 class TeamList extends Component {
   create() {
@@ -50,21 +51,5 @@ class TeamList extends Component {
     )
   }
 }
-
-export const ALL_TEAMS_QUERY = gql`
-  query AllTeamsQuery {
-    allTeams {
-      id
-      name,
-      members {
-        id
-        name
-      }
-    }
-    _allTeamsMeta {
-      count
-    }
-  }
-`
 
 export default graphql(ALL_TEAMS_QUERY)(TeamList)

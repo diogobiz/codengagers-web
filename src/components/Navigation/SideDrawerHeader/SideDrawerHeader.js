@@ -1,16 +1,23 @@
 import React from 'react'
 
-import { Logo } from '../../Logo'
-
 import Aux from '../../../hoc/Aux/Aux'
+
+import profile from '../../../assets/images/profile.jpeg'
 
 import './SideDrawerHeader.css'
 
 const SideDrawer = (props) => {
+  let backgroundImage = {
+    backgroundImage: `url(${profile})`
+  }
+
   return (
     <Aux>
-      <div className="SideDrawerHeader">
-        <Logo white />
+      <div className="SideDrawerHeader cover" style={backgroundImage}>
+        <div className="SideDrawerHeader-Overlay">
+          <div className="SideDrawerHeader-Image cover" style={backgroundImage}></div>
+          <strong>Munir Ahmed</strong>
+        </div>
       </div>
     </Aux>
   )

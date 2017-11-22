@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 
 import { graphql } from 'react-apollo'
-import gql from 'graphql-tag'
 
-import { ALL_TEAMS_QUERY } from '../TeamList/TeamList'
+import { ALL_TEAMS_QUERY, CREATE_TEAM_MUTATION } from '../../../graphql'
 
 class TeamNew extends Component {
   state = {
@@ -82,17 +81,5 @@ class TeamNew extends Component {
     )
   }
 }
-
-export const CREATE_TEAM_MUTATION = gql`
-  mutation CreateTeamMutation($name: String!) {
-    createTeam(
-      name: $name
-    ) {
-      id
-      name
-      createdAt
-    }
-  }
-`
 
 export default graphql(CREATE_TEAM_MUTATION)(TeamNew)
