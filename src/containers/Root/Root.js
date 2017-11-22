@@ -25,6 +25,10 @@ const asyncTeamEdit = asyncComponent(() => {
   return import('../Team/TeamEdit/TeamEdit');
 })
 
+const asyncCoworkers = asyncComponent(() => {
+  return import('../Coworkers/Coworkers');
+})
+
 const asyncCounter = asyncComponent(() => {
   return import('../Counter/Counter');
 })
@@ -63,9 +67,10 @@ class Root extends Component {
           <Route path="/team/new" exact component={asyncTeamNew} />
           <Route path="/team/edit/:id" exact component={asyncTeamEdit} />
           <Route path="/counter" exact component={asyncCounter} />
+          <Route path="/coworkers" exact component={asyncCoworkers} />
           <Route path="/logout" exact component={Logout} />
           <Route path="/" exact component={App} />
-          <Redirect to="/" />
+          <Redirect to="/coworkers" />
         </Switch>
       )
     }
